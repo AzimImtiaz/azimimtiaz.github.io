@@ -2,23 +2,1063 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My Framer Site</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdul Azim Imtiaz | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Abdul Azim Imtiaz, EEE student at CUET" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
   <style>
-    html, body {
+    :root {
+      --bg: #050816;
+      --bg-alt: #0f172a;
+      --card: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.1);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: #1f2937;
+      --radius-lg: 14px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.7);
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      height: 100%;
-      overflow: hidden;
     }
-    iframe {
-      border: 0;
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 45%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout */
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
       width: 100%;
-      height: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* Navbar */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.9),
+        rgba(15, 23, 42, 0.75),
+        transparent
+      );
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .brand-name {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      font-size: 1.05rem;
+    }
+
+    .brand-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      color: var(--text-muted);
+      border: 1px solid transparent;
+      transition: all 0.18s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      border-color: var(--accent-soft);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 3rem 0 2rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 1.5rem;
+      }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw, 2.6rem);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #38bdf8, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-role {
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      font-size: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-muted);
+    }
+
+    .hero-meta-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #64748b;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text-main);
+      transition: all 0.18s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      color: #0b1120;
+      font-weight: 500;
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.7);
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.88);
+      color: var(--text-muted);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(15, 23, 42, 1);
+    }
+
+    .hero-avatar-card {
+      background: radial-gradient(circle at top, #1f2937, #020617 65%);
+      border-radius: 26px;
+      padding: 1.2rem;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+
+    .hero-avatar-circle {
+      width: 96px;
+      height: 96px;
+      border-radius: 999px;
+      border: 2px solid rgba(148, 163, 184, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.1rem;
+      font-weight: 600;
+      background: radial-gradient(circle at 30% 0%, #38bdf8, #020617 60%);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-avatar-name {
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .hero-avatar-role {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-avatar-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: flex-end;
+    }
+
+    .hero-tag {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.16);
+      color: var(--text-muted);
+    }
+
+    .hero-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .hero-chip {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-socials {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .hero-social-link {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.9);
+      transition: all 0.16s ease;
+    }
+
+    .hero-social-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    /* Sections */
+
+    section {
+      padding: 1.75rem 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #64748b;
+    }
+
+    .section-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Cards & lists */
+
+    .card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.98));
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 1.1rem 1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card + .card {
+      margin-top: 0.8rem;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: baseline;
+      margin-bottom: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    .card-title {
+      font-weight: 500;
+      font-size: 0.98rem;
+    }
+
+    .card-subtitle {
+      font-size: 0.83rem;
+      color: var(--accent);
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .card-body {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 0.22rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text-muted);
+    }
+
+    .list-compact {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.4rem 0.8rem;
+      font-size: 0.85rem;
+    }
+
+    .list-compact li::before {
+      content: "▹";
+      margin-right: 0.4rem;
+      color: var(--accent);
+      font-size: 0.75rem;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 750px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .contact-item {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #64748b;
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-value {
+      font-size: 0.92rem;
+      color: var(--text-main);
+      word-break: break-all;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 1.25rem 0 1.75rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      margin-top: 1.5rem;
+    }
+
+    footer .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #9ca3af;
+      font-size: 0.8rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
     }
   </style>
 </head>
 <body>
-  <iframe src="https://azimimtiaz.framer.website/"></iframe>
+  <div class="page">
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="container">
+        <div class="nav-inner">
+          <div class="brand">
+            <div class="brand-name">Abdul Azim Imtiaz</div>
+            <div class="brand-sub">EEE @ CUET | Undergrad Learner</div>
+          </div>
+          <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO / ABOUT -->
+      <section id="about" class="hero">
+        <div class="container">
+          <div class="hero-inner">
+            <div>
+              <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                <span>Electrical & Electronic Engineering · CUET</span>
+              </div>
+
+              <h1 class="hero-title">
+                Hi, I'm <span>Abdul Azim Imtiaz</span>
+              </h1>
+              <div class="hero-role">B.Sc (Engr.) in Electrical & Electronic Engineering, CUET</div>
+
+              <p class="hero-text">
+                I’m an undergraduate EEE student at Chittagong University of Engineering & Technology (CUET),
+                interested in electronics, control systems, and programming. Beyond coursework, I stay active in
+                student organizations, working on technical, leadership, and teamwork skills through real projects
+                and events. I enjoy learning new things, solving problems, and collaborating on ideas that can have a
+                meaningful impact.
+              </p>
+
+              <div class="hero-meta">
+                <span>
+                  <span class="hero-meta-label">Status</span>
+                  Undergrad Student · Learner
+                </span>
+                <span>
+                  <span class="hero-meta-label">Location</span>
+                  Chittagong, Bangladesh
+                </span>
+                <span>
+                  <span class="hero-meta-label">Email</span>
+                  <a href="mailto:abdulaziim84@gmail.com">abdulaziim84@gmail.com</a>
+                </span>
+              </div>
+
+              <div class="hero-actions">
+                <a
+                  href="https://sites.google.com/view/azimimtiaz/home"
+                  class="btn btn-primary"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View Full Profile
+                </a>
+                <a href="#contact" class="btn btn-ghost">Get in touch</a>
+              </div>
+            </div>
+
+            <aside class="hero-avatar-card">
+              <div>
+                <div class="hero-avatar-circle">AI</div>
+                <div class="hero-avatar-name">Abdul Azim Imtiaz</div>
+                <div class="hero-avatar-role">EEE Student · CUET</div>
+
+                <div class="hero-chip-row" style="margin-top: 0.75rem;">
+                  <span class="hero-chip">Electronics</span>
+                  <span class="hero-chip">Control Systems</span>
+                  <span class="hero-chip">Programming</span>
+                </div>
+              </div>
+
+              <div class="hero-avatar-footer">
+                <div>
+                  <div class="hero-tag">Active in student organizations</div>
+                  <div class="hero-chip-row" style="margin-top: 0.55rem;">
+                    <span class="hero-chip">IEEE CUET SB · Executive Member</span>
+                    <span class="hero-chip">Andromeda · General Member</span>
+                  </div>
+                </div>
+                <div class="hero-socials">
+                  <!-- Replace # with your actual profile links -->
+                  <a href="#" class="hero-social-link" title="LinkedIn">in</a>
+                  <a href="#" class="hero-social-link" title="GitHub">gh</a>
+                  <a href="#" class="hero-social-link" title="Facebook">fb</a>
+                  <a href="#" class="hero-social-link" title="Instagram">ig</a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">Background</div>
+              <h2 class="section-title">Education</h2>
+            </div>
+            <p class="section-subtitle">
+              From school foundations to engineering at CUET, building a strong base in science and technology.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">
+                  B.Sc (Engr.) in Electrical & Electronic Engineering
+                </div>
+                <div class="card-subtitle">
+                  Chittagong University of Engineering & Technology (CUET)
+                </div>
+              </div>
+              <div class="card-meta">2023 – 2027 · Chittagong 4349, Bangladesh</div>
+            </div>
+            <div class="card-body">
+              CGPA: X / 4.00 (ongoing)
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">
+                  Higher Secondary Certificate (HSC) · Science
+                </div>
+                <div class="card-subtitle">
+                  Ispahani Public School & College
+                </div>
+              </div>
+              <div class="card-meta">2020 – 2022 · Chittagong, Bangladesh</div>
+            </div>
+            <div class="card-body">
+              GPA: 5.00 / 5.00
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">
+                  Secondary School Certificate (SSC) · Science
+                </div>
+                <div class="card-subtitle">
+                  Nasirabad Government High School
+                </div>
+              </div>
+              <div class="card-meta">2020 · Chittagong, Bangladesh</div>
+            </div>
+            <div class="card-body">
+              GPA: 5.00 / 5.00
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">Capabilities</div>
+              <h2 class="section-title">Skills</h2>
+            </div>
+            <p class="section-subtitle">
+              A mix of programming, tools, and soft skills shaped by coursework, projects, and club activities.
+            </p>
+          </div>
+
+          <div class="two-col">
+            <div class="card">
+              <div class="card-title">Programming & Technical</div>
+              <ul class="list-compact" style="margin-top: 0.6rem;">
+                <li>C Programming</li>
+                <li>C++</li>
+                <li>Python</li>
+                <li>MATLAB</li>
+                <li>Data Structures & Algorithms</li>
+              </ul>
+
+              <div class="card-title" style="margin-top: 1.1rem;">Software & Tools</div>
+              <ul class="list-compact" style="margin-top: 0.6rem;">
+                <li>MATLAB</li>
+                <li>VS Code</li>
+                <li>Adobe Photoshop</li>
+                <li>Proteus</li>
+                <li>PSpice</li>
+                <li>Code::Blocks</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-title">Web Development</div>
+              <ul class="list-compact" style="margin-top: 0.6rem;">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+
+              <div class="card-title" style="margin-top: 1.1rem;">Soft Skills</div>
+              <ul class="list-compact" style="margin-top: 0.6rem;">
+                <li>Teamwork</li>
+                <li>Leadership</li>
+                <li>Honesty</li>
+                <li>Collaboration</li>
+                <li>Patience</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">Work & Coursework</div>
+              <h2 class="section-title">Projects</h2>
+            </div>
+            <p class="section-subtitle">
+              Selected academic and course-related work highlighting circuits, OOP, and electrical machine design.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">EEE 222 – Circuit Shop</div>
+                <div class="card-subtitle">Course Project</div>
+              </div>
+              <div class="card-meta">Department of EEE, CUET</div>
+            </div>
+            <div class="card-body">
+              Hands-on circuit design and analysis work, focusing on understanding practical behavior of
+              fundamental electrical circuits and components.
+              <div class="pill-row">
+                <span class="pill">Basic Circuits</span>
+                <span class="pill">Measurement</span>
+                <span class="pill">Lab Work</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Object Oriented Programming (OOP)</div>
+                <div class="card-subtitle">Programming Practice</div>
+              </div>
+              <div class="card-meta">C++ / OOP Concepts</div>
+            </div>
+            <div class="card-body">
+              Implementation of OOP concepts such as classes, inheritance, and abstraction to build structured and
+              reusable code for problem solving.
+              <div class="pill-row">
+                <span class="pill">C++</span>
+                <span class="pill">OOP</span>
+                <span class="pill">Problem Solving</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Electrical Machine Design</div>
+                <div class="card-subtitle">Course-related Work</div>
+              </div>
+              <div class="card-meta">Design & Analysis</div>
+            </div>
+            <div class="card-body">
+              Exploration of key ideas in electrical machine design, including performance parameters and practical
+              constraints in real engineering applications.
+              <div class="pill-row">
+                <span class="pill">Electrical Machines</span>
+                <span class="pill">Design Concepts</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE / ORGANIZATION / ECA -->
+      <section id="experience">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">Involvement</div>
+              <h2 class="section-title">Experience & Organizations</h2>
+            </div>
+            <p class="section-subtitle">
+              Roles in student organizations that build leadership, coordination, and communication skills.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Executive Member</div>
+                <div class="card-subtitle">IEEE CUET Student Branch</div>
+              </div>
+              <div class="card-meta">2024 – Present</div>
+            </div>
+            <div class="card-body">
+              Supporting technical and organizational activities under the IEEE CUET Student Branch, contributing to
+              events, sessions, and student engagement around electrical and electronic engineering.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">General Member</div>
+                <div class="card-subtitle">
+                  Andromeda Space & Robotics Research Organization
+                </div>
+              </div>
+              <div class="card-meta">2024 – Present</div>
+            </div>
+            <div class="card-body">
+              Involved in a community focused on space, robotics, and engineering projects, learning through
+              collaboration and exploration of technology-driven ideas.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">
+                  Executive – Judges & Participants Management
+                </div>
+                <div class="card-subtitle">Hult Prize 2025 (CUET Campus)</div>
+              </div>
+              <div class="card-meta">2025 – Present</div>
+            </div>
+            <div class="card-body">
+              Coordinating between judges and participants, helping ensure smooth event flow and a good experience
+              for everyone involved in the Hult Prize campus program.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">General Member</div>
+                <div class="card-subtitle">CUET Career Club</div>
+              </div>
+              <div class="card-meta">2024 – Present</div>
+            </div>
+            <div class="card-body">
+              Participating in activities that focus on career development, networking, and soft skills for students.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">ECA & Training</div>
+                <div class="card-subtitle">Co-curricular Growth</div>
+              </div>
+            </div>
+            <div class="card-body">
+              Engaged in various extracurricular activities and trainings related to engineering, leadership, and
+              teamwork. Certificates and details can be added here as they are updated.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESEARCH -->
+      <section id="research">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">Academic Interests</div>
+              <h2 class="section-title">Research</h2>
+            </div>
+            <p class="section-subtitle">
+              Research interests are developing around electronics, control, and related EEE domains.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              Research work is in progress. This section can be updated with specific topics, projects, and papers as
+              they are completed.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PUBLICATIONS -->
+      <section id="publications">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">Outputs</div>
+              <h2 class="section-title">Publications</h2>
+            </div>
+            <p class="section-subtitle">
+              Formal publications will be listed here once available.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              No formal publications added yet. As work is published in conferences or journals, citation details and
+              links can be included here.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">Connect</div>
+              <h2 class="section-title">Get in Touch</h2>
+            </div>
+            <p class="section-subtitle">
+              Open to learning, collaboration, and new opportunities in EEE, programming, and student activities.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="card">
+              <div class="contact-item">
+                <div class="contact-label">Email</div>
+                <div class="contact-value">
+                  <a href="mailto:abdulaziim84@gmail.com">abdulaziim84@gmail.com</a>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-label">Location</div>
+                <div class="contact-value">Chittagong, Bangladesh</div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="contact-item">
+                <div class="contact-label">Profiles</div>
+                <div class="contact-value">
+                  <!-- Replace # with real URLs -->
+                  <div class="footer-links">
+                    <a href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+                    <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+                    <a href="#" target="_blank" rel="noreferrer">Facebook</a>
+                    <a href="#" target="_blank" rel="noreferrer">Instagram</a>
+                    <a
+                      href="https://sites.google.com/view/azimimtiaz/home"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Google Site
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-item" style="margin-top: 0.8rem;">
+                <div class="contact-label">Note</div>
+                <div class="contact-value">
+                  Feel free to reach out regarding projects, club work, or just to discuss ideas in EEE and
+                  technology.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <div>
+            ©
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            Abdul Azim Imtiaz
+          </div>
+          <div class="footer-links">
+            <a href="#about">Back to top ↑</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
