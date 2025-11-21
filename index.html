@@ -1,162 +1,164 @@
-import React from 'react';
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abdul Azim Imtiaz — Portfolio</title>
+  <meta name="description" content="Portfolio — Abdul Azim Imtiaz, EEE Student, CUET" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site">
 
-// Single-file React component (export default) that implements a clean, easy-to-read
-// portfolio layout inspired by the design and structure of https://jirugutema.vercel.app/
-// Content is taken from the user's Google Sites (Abdul Azim Imtiaz).
-// Tailwind CSS classes are used for styling (assumes Tailwind is already configured).
-
-// ---------- Data (pulled from provided Google Sites) ----------
-const PROFILE = {
-  name: 'Abdul Azim Imtiaz',
-  title: 'Undergrad Student | Electrical & Electronic Engineering (B.Sc Engr, CUET)',
-  location: 'Chittagong, Bangladesh',
-  email: 'abdulaziim84@gmail.com',
-  shortBio:
-    `Hello, I am Abdul Azim Imtiaz, an Electrical and Electronic Engineering student at CUET, Bangladesh, with deep passion in electronics, control systems, programming, etc. Beyond academics, I take on leadership roles as an Executive Member of the IEEE CUET Student Branch and a General Member of the Andromeda Space & Robotics Research Organization. My leadership and teamwork experiences have strengthened my ability to tackle complex challenges, drive impactful projects, and collaborate effectively. I’m always eager to connect, collaborate, and explore new challenges.`,
-  // Basic navigation sections found on the Google Sites page
-  sections: [
-    'Home',
-    'Education',
-    'Experience',
-    'Projects',
-    'Research',
-    'Publications',
-    'Skills',
-    'Organization',
-  ],
-  social: {
-    linkedin: '#',
-    facebook: '#',
-    instagram: '#',
-    github: '#',
-  },
-};
-
-// Example skills list - the Google Sites page has a "Skills" menu item; fill with typical items
-const SKILLS = [
-  'Electronics',
-  'Control Systems',
-  'Embedded Programming',
-  'C / C++',
-  'Python',
-  'MATLAB / Simulink',
-];
-
-// Simple Projects mock (the Google Sites lists Projects & subpages; details can be swapped in later)
-const PROJECTS = [
-  {
-    title: 'EEE 222 - Circuit Shop (Lab Project)',
-    desc: 'Laboratory project on circuit analysis and design. (From site navigation)',
-  },
-  {
-    title: 'OOP Project',
-    desc: 'Object Oriented Programming coursework and projects.',
-  },
-  {
-    title: 'Electrical Machine Design',
-    desc: 'Design exercises and assignments related to electrical machines.',
-  },
-];
-
-export default function AzimPortfolio() {
-  return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
-      {/* Container */}
-      <header className="max-w-4xl mx-auto p-6 flex items-center justify-between">
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <div class="logo">AI</div>
         <div>
-          <h1 className="text-2xl font-semibold">{PROFILE.name}</h1>
-          <p className="text-sm text-gray-600">{PROFILE.title}</p>
+          <h1>Abdul Azim Imtiaz</h1>
+          <p>B.Sc (Engr) in EEE, CUET</p>
         </div>
-        <nav className="hidden md:flex gap-4 text-sm text-gray-700">
-          {PROFILE.sections.map((s) => (
-            <a key={s} href={`#${s.toLowerCase()}`} className="hover:underline">
-              {s}
-            </a>
-          ))}
-        </nav>
-        <div className="md:hidden">{/* mobile menu placeholder */}</div>
-      </header>
+      </div>
 
-      <main className="max-w-4xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Left column - Hero & contact */}
-        <section className="md:col-span-1 bg-white rounded-2xl p-6 shadow-sm">
-          <div className="flex flex-col items-center text-center">
-            {/* Placeholder profile image */}
-            <div className="w-28 h-28 rounded-full bg-gray-200 flex items-center justify-center mb-4">
-              <span className="text-sm text-gray-500">Profile</span>
-            </div>
-            <h2 className="text-xl font-medium">{PROFILE.name}</h2>
-            <p className="text-sm text-gray-600 mt-1">{PROFILE.location}</p>
-            <p className="text-sm text-gray-600 mt-1">{PROFILE.title}</p>
+      <nav class="toplinks" aria-label="Main navigation">
+        <a href="#about">Home</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-            <div className="mt-4 w-full text-left">
-              <h3 className="text-sm font-semibold mb-2">Profile & Contacts</h3>
-              <p className="text-sm text-gray-700">Email: <a href={`mailto:${PROFILE.email}`} className="text-blue-600 hover:underline">{PROFILE.email}</a></p>
-              <p className="text-sm text-gray-700">Location: {PROFILE.location}</p>
+    <!-- Left Column -->
+    <aside class="card" aria-labelledby="profile-card">
+      <div id="profile-card" class="center">
+        <div class="profile-pic" aria-hidden="true">Profile</div>
 
-              <div className="flex gap-3 mt-3">
-                <a href={PROFILE.social.linkedin} aria-label="LinkedIn" className="text-gray-500 hover:text-gray-800">LinkedIn</a>
-                <a href={PROFILE.social.github} aria-label="GitHub" className="text-gray-500 hover:text-gray-800">GitHub</a>
-                <a href={PROFILE.social.facebook} aria-label="Facebook" className="text-gray-500 hover:text-gray-800">Facebook</a>
-              </div>
-            </div>
+        <h2 class="center">Azim Imtiaz</h2>
+        <div class="meta center">Chittagong, Bangladesh</div>
+        <div class="meta center">Undergrad Student | Learner</div>
+
+        <div class="contact-section center" style="margin-top:12px;">
+          <div style="font-size:13px;color:var(--muted)">Email</div>
+          <a class="contact-link" href="mailto:abdulaziim84@gmail.com">abdulaziim84@gmail.com</a>
+        </div>
+
+        <div class="socials" aria-hidden="false" style="margin-top:12px;">
+          <!-- The Google Site shows icons; replace '#' with real URLs if you want -->
+          <a class="pill" href="#" title="LinkedIn">LinkedIn</a>
+          <a class="pill" href="#" title="Facebook">Facebook</a>
+          <a class="pill" href="#" title="Instagram">Instagram</a>
+          <a class="pill" href="#" title="GitHub">GitHub</a>
+        </div>
+
+        <div class="meta center" style="margin-top:14px;">
+          Executive Member — IEEE CUET Student Branch<br>
+          General Member — Andromeda Space & Robotics Research Organization
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Column -->
+    <main class="right" role="main">
+
+      <!-- Home / About -->
+      <section id="about" class="section about" aria-labelledby="aboutTitle">
+        <h2 id="aboutTitle" class="section-title">Hi, I'm Azim Imtiaz.</h2>
+        <p class="lead">
+          Hello, I am Abdul Azim Imtiaz, an Electrical and Electronic Engineering student at CUET, Bangladesh,
+          with deep passion in electronics, control systems, programming, etc. Beyond academics, I take on leadership roles
+          as an Executive Member of the IEEE CUET Student Branch and a General Member of the Andromeda Space & Robotics Research Organization.
+          My leadership and teamwork experiences have strengthened my ability to tackle complex challenges, drive impactful projects, and collaborate effectively.
+          I’m always eager to connect, collaborate, and explore new challenges.
+        </p>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="section" aria-labelledby="eduTitle">
+        <h2 id="eduTitle" class="section-title">Education</h2>
+        <ul class="simple-list">
+          <li>B.Sc (Engr) in Electrical & Electronic Engineering — CUET (Current)</li>
+          <!-- Add specifics (year, GPA) if you want — Google Sites navigation includes Education page. -->
+        </ul>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="section" aria-labelledby="expTitle">
+        <h2 id="expTitle" class="section-title">Experience</h2>
+        <ul class="simple-list">
+          <li>Executive Member — IEEE CUET Student Branch (student leadership & events)</li>
+          <li>General Member — Andromeda Space & Robotics Research Organization (team projects & research)</li>
+          <li>CUET Integration Bee — (see subpage on your Google Site for details)</li>
+        </ul>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section projects" aria-labelledby="projTitle">
+        <h2 id="projTitle" class="section-title">Projects</h2>
+
+        <div class="item">
+          <h3>EEE 222 - Circuit Shop</h3>
+          <p>Laboratory project and practical coursework (from Google Site navigation).</p>
+        </div>
+
+        <div class="item">
+          <h3>OOP</h3>
+          <p>Object Oriented Programming coursework and projects (listed on site).</p>
+        </div>
+
+        <div class="item">
+          <h3>Electrical Machine Design</h3>
+          <p>Design assignments and exercises (listed on site).</p>
+        </div>
+      </section>
+
+      <!-- Research & Publications -->
+      <section id="research" class="section" aria-labelledby="resTitle">
+        <h2 id="resTitle" class="section-title">Research</h2>
+        <p class="muted">See your Google Site pages for full Research & Publications lists — this template includes the sections so you can paste each item.</p>
+      </section>
+
+      <section id="publications" class="section" aria-labelledby="pubTitle">
+        <h2 id="pubTitle" class="section-title">Publications</h2>
+        <p class="muted">(No detailed publication entries were shown on the home page — add them here if you have.)</p>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section" aria-labelledby="skillsTitle">
+        <h2 id="skillsTitle" class="section-title">Skills</h2>
+        <div class="skills">
+          <span class="skill">Electronics</span>
+          <span class="skill">Control Systems</span>
+          <span class="skill">Embedded Programming</span>
+          <span class="skill">C / C++</span>
+          <span class="skill">Python</span>
+          <span class="skill">MATLAB / Simulink</span>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section" aria-labelledby="contactTitle">
+        <h2 id="contactTitle" class="section-title">Get in touch</h2>
+        <div class="contact-cta">
+          <div>
+            <strong>Want to collaborate?</strong>
+            <p class="muted">Email me for research opportunities, projects, or questions.</p>
           </div>
-        </section>
-
-        {/* Right column - About, Skills, Projects */}
-        <section className="md:col-span-2 space-y-6">
-          <article id="home" className="bg-white rounded-2xl p-6 shadow-sm">
-            <h3 className="text-lg font-semibold mb-2">About Me</h3>
-            <p className="text-sm text-gray-700 leading-relaxed">{PROFILE.shortBio}</p>
-          </article>
-
-          <article id="skills" className="bg-white rounded-2xl p-6 shadow-sm">
-            <h3 className="text-lg font-semibold mb-3">Skills</h3>
-            <ul className="grid grid-cols-2 gap-2 text-sm">
-              {SKILLS.map((skill) => (
-                <li key={skill} className="px-3 py-2 bg-gray-50 rounded-md border text-gray-700">{skill}</li>
-              ))}
-            </ul>
-          </article>
-
-          <article id="projects" className="bg-white rounded-2xl p-6 shadow-sm">
-            <h3 className="text-lg font-semibold mb-3">Selected Projects</h3>
-            <div className="space-y-4">
-              {PROJECTS.map((p) => (
-                <div key={p.title} className="p-4 border rounded-md bg-white">
-                  <h4 className="font-medium">{p.title}</h4>
-                  <p className="text-sm text-gray-600 mt-1">{p.desc}</p>
-                </div>
-              ))}
-            </div>
-          </article>
-
-          <article id="experience" className="bg-white rounded-2xl p-6 shadow-sm">
-            <h3 className="text-lg font-semibold mb-3">Experience</h3>
-            <p className="text-sm text-gray-700">Experience items exist on the original site (Education, Experience, CUET Integration Bee, etc.). Add detailed entries here the same way as projects — each entry should include role, organization, date range, and 2–3 bullet achievements.</p>
-          </article>
-        </section>
-
-        {/* Footer / Contact callout - full width */}
-        <div className="md:col-span-3 bg-white rounded-2xl p-6 shadow-sm">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
-              <h4 className="text-lg font-semibold">Get in touch</h4>
-              <p className="text-sm text-gray-700">I'm open to collaborations, research, and project discussions. Email me at <a href={`mailto:${PROFILE.email}`} className="text-blue-600 hover:underline">{PROFILE.email}</a>.</p>
-            </div>
-            <div className="text-sm text-gray-500">© {new Date().getFullYear()} {PROFILE.name}. All rights reserved.</div>
+          <div style="text-align:right">
+            <a class="btn" href="mailto:abdulaziim84@gmail.com">Email — abdulaziim84@gmail.com</a>
+            <div class="muted" style="font-size:12px;margin-top:6px">© <span id="yr"></span> Abdul Azim Imtiaz</div>
           </div>
         </div>
-      </main>
-    </div>
-  );
-}
+      </section>
 
-/*
-Notes for the developer who will deploy this:
-- Tailwind CSS must be configured in the project (classes assume Tailwind).
-- Replace social links with real URLs.
-- Replace placeholder project details with full content from the Google Sites subpages (Projects, Research, Publications).
-- This file is intentionally written as a single React component to make it easy to inspect and modify. For a production app, split into smaller components (Header, Hero, Card, ProjectsList).
-- Accessibility: add alt text to any real profile image and improve heading hierarchy if adding more sections.
-*/
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
