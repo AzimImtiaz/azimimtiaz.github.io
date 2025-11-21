@@ -1,164 +1,82 @@
 <!doctype html>
-<html lang="en">
+<html lang="bn">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Abdul Azim Imtiaz — Portfolio</title>
-  <meta name="description" content="Portfolio — Abdul Azim Imtiaz, EEE Student, CUET" />
+  <meta name="description" content="Abdul Azim Imtiaz — EEE Student, CUET" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="site">
 
-    <!-- Header -->
-    <header>
-      <div class="brand">
-        <div class="logo">AI</div>
-        <div>
-          <h1>Abdul Azim Imtiaz</h1>
-          <p>B.Sc (Engr) in EEE, CUET</p>
-        </div>
-      </div>
-
-      <nav class="toplinks" aria-label="Main navigation">
+  <main class="wrap">
+    <header class="nav">
+      <div class="brand">Azim Imtiaz</div>
+      <nav class="links">
         <a href="#about">Home</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <!-- Left Column -->
-    <aside class="card" aria-labelledby="profile-card">
-      <div id="profile-card" class="center">
-        <div class="profile-pic" aria-hidden="true">Profile</div>
+    <section class="hero">
+      <img class="avatar" alt="Azim Imtiaz" src="avatar-placeholder.png" />
+      <h1>Abdul Azim Imtiaz</h1>
+      <p class="subtitle">B.Sc (Engr) — Electrical &amp; Electronic Engineering, CUET</p>
 
-        <h2 class="center">Azim Imtiaz</h2>
-        <div class="meta center">Chittagong, Bangladesh</div>
-        <div class="meta center">Undergrad Student | Learner</div>
+      <p class="bio">
+        Hello — I am an EEE undergraduate at CUET with deep passion in electronics, control systems, and embedded programming.
+        Executive Member — IEEE CUET Student Branch. Member — Andromeda Space &amp; Robotics Research Organization.
+      </p>
 
-        <div class="contact-section center" style="margin-top:12px;">
-          <div style="font-size:13px;color:var(--muted)">Email</div>
-          <a class="contact-link" href="mailto:abdulaziim84@gmail.com">abdulaziim84@gmail.com</a>
-        </div>
-
-        <div class="socials" aria-hidden="false" style="margin-top:12px;">
-          <!-- The Google Site shows icons; replace '#' with real URLs if you want -->
-          <a class="pill" href="#" title="LinkedIn">LinkedIn</a>
-          <a class="pill" href="#" title="Facebook">Facebook</a>
-          <a class="pill" href="#" title="Instagram">Instagram</a>
-          <a class="pill" href="#" title="GitHub">GitHub</a>
-        </div>
-
-        <div class="meta center" style="margin-top:14px;">
-          Executive Member — IEEE CUET Student Branch<br>
-          General Member — Andromeda Space & Robotics Research Organization
-        </div>
+      <div class="social-row">
+        <a href="#" class="btn-outline">LinkedIn</a>
+        <a href="#" class="btn-outline">GitHub</a>
+        <a href="#" class="btn-outline">Facebook</a>
       </div>
-    </aside>
+    </section>
 
-    <!-- Right Column -->
-    <main class="right" role="main">
+    <section id="projects" class="card-list">
+      <h2>Selected Projects</h2>
 
-      <!-- Home / About -->
-      <section id="about" class="section about" aria-labelledby="aboutTitle">
-        <h2 id="aboutTitle" class="section-title">Hi, I'm Azim Imtiaz.</h2>
-        <p class="lead">
-          Hello, I am Abdul Azim Imtiaz, an Electrical and Electronic Engineering student at CUET, Bangladesh,
-          with deep passion in electronics, control systems, programming, etc. Beyond academics, I take on leadership roles
-          as an Executive Member of the IEEE CUET Student Branch and a General Member of the Andromeda Space & Robotics Research Organization.
-          My leadership and teamwork experiences have strengthened my ability to tackle complex challenges, drive impactful projects, and collaborate effectively.
-          I’m always eager to connect, collaborate, and explore new challenges.
-        </p>
-      </section>
+      <article class="card">
+        <h3>Speed Control of Separately Excited DC Motor</h3>
+        <p>Experiment (EEE-234) — armature & field control study, results & graphs.</p>
+      </article>
 
-      <!-- Education -->
-      <section id="education" class="section" aria-labelledby="eduTitle">
-        <h2 id="eduTitle" class="section-title">Education</h2>
-        <ul class="simple-list">
-          <li>B.Sc (Engr) in Electrical & Electronic Engineering — CUET (Current)</li>
-          <!-- Add specifics (year, GPA) if you want — Google Sites navigation includes Education page. -->
-        </ul>
-      </section>
+      <article class="card">
+        <h3>Load Characteristics of DC Shunt Generator</h3>
+        <p>Lab report and analysis on external characteristics and performance curves.</p>
+      </article>
 
-      <!-- Experience -->
-      <section id="experience" class="section" aria-labelledby="expTitle">
-        <h2 id="expTitle" class="section-title">Experience</h2>
-        <ul class="simple-list">
-          <li>Executive Member — IEEE CUET Student Branch (student leadership & events)</li>
-          <li>General Member — Andromeda Space & Robotics Research Organization (team projects & research)</li>
-          <li>CUET Integration Bee — (see subpage on your Google Site for details)</li>
-        </ul>
-      </section>
+      <article class="card">
+        <h3>Embedded / Microcontroller Projects</h3>
+        <p>Small MCU projects integrating sensors, actuators and control logic.</p>
+      </article>
+    </section>
 
-      <!-- Projects -->
-      <section id="projects" class="section projects" aria-labelledby="projTitle">
-        <h2 id="projTitle" class="section-title">Projects</h2>
+    <section id="experience" class="two-col">
+      <div>
+        <h2>Education</h2>
+        <p>B.Sc (Engr) in Electrical &amp; Electronic Engineering — CUET (ongoing)</p>
+      </div>
+      <div>
+        <h2>Roles</h2>
+        <p>Executive Member — IEEE CUET Student Branch</p>
+        <p>Member — Andromeda Space &amp; Robotics Research Organization</p>
+      </div>
+    </section>
 
-        <div class="item">
-          <h3>EEE 222 - Circuit Shop</h3>
-          <p>Laboratory project and practical coursework (from Google Site navigation).</p>
-        </div>
+    <footer id="contact" class="footer">
+      <div>
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:abdulaziim84@gmail.com">abdulaziim84@gmail.com</a></p>
+      </div>
+      <div class="small">© <span id="yr"></span> Abdul Azim Imtiaz</div>
+    </footer>
+  </main>
 
-        <div class="item">
-          <h3>OOP</h3>
-          <p>Object Oriented Programming coursework and projects (listed on site).</p>
-        </div>
-
-        <div class="item">
-          <h3>Electrical Machine Design</h3>
-          <p>Design assignments and exercises (listed on site).</p>
-        </div>
-      </section>
-
-      <!-- Research & Publications -->
-      <section id="research" class="section" aria-labelledby="resTitle">
-        <h2 id="resTitle" class="section-title">Research</h2>
-        <p class="muted">See your Google Site pages for full Research & Publications lists — this template includes the sections so you can paste each item.</p>
-      </section>
-
-      <section id="publications" class="section" aria-labelledby="pubTitle">
-        <h2 id="pubTitle" class="section-title">Publications</h2>
-        <p class="muted">(No detailed publication entries were shown on the home page — add them here if you have.)</p>
-      </section>
-
-      <!-- Skills -->
-      <section id="skills" class="section" aria-labelledby="skillsTitle">
-        <h2 id="skillsTitle" class="section-title">Skills</h2>
-        <div class="skills">
-          <span class="skill">Electronics</span>
-          <span class="skill">Control Systems</span>
-          <span class="skill">Embedded Programming</span>
-          <span class="skill">C / C++</span>
-          <span class="skill">Python</span>
-          <span class="skill">MATLAB / Simulink</span>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact" class="section" aria-labelledby="contactTitle">
-        <h2 id="contactTitle" class="section-title">Get in touch</h2>
-        <div class="contact-cta">
-          <div>
-            <strong>Want to collaborate?</strong>
-            <p class="muted">Email me for research opportunities, projects, or questions.</p>
-          </div>
-          <div style="text-align:right">
-            <a class="btn" href="mailto:abdulaziim84@gmail.com">Email — abdulaziim84@gmail.com</a>
-            <div class="muted" style="font-size:12px;margin-top:6px">© <span id="yr"></span> Abdul Azim Imtiaz</div>
-          </div>
-        </div>
-      </section>
-
-    </main>
-  </div>
-
-  <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
 </html>
