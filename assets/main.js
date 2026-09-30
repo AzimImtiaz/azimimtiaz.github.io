@@ -153,7 +153,7 @@ const GLYPHS = [
   ["energy", "zap"],
   ["signal", "activity"],
   ["simulink", "activity"],
-  ["matlab", "matlab"],
+  ["matlab", "chart"],
   ["control", "layers"],
   ["system", "layers"],
   ["analysis", "chart"],
