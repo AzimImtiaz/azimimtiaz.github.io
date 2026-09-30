@@ -1,17 +1,22 @@
 heading: About
+
 paragraphs:
   - >-
-    I’ve been working on backend systems since 2014, mostly for SaaS products and web apps that can’t afford to fall
-    over when traffic spikes.
+    I am an Electrical and Electronic Engineering student at Chittagong University of Engineering & Technology (CUET),
+    with an interest in power systems, electronics, renewable energy, and emerging engineering technologies.
+
   - >-
-    Day to day I’m in Laravel and Go (Fiber): designing APIs, shaping data models, and fixing the parts that usually
-    hurt first - slow queries, missing indexes, noisy background jobs, and brittle integrations.
+    Through academic projects and laboratory work, I have worked with tools such as MATLAB, Simulink, AutoCAD Electrical,
+    ADS, Proteus, and ESP32-based systems, developing practical experience in simulation, circuit design, and embedded systems.
+
   - >-
-    I like being close to the product and building backends that still make sense a few years later, not just for the
-    next release. I’m open to remote backend roles and longer-term work with teams building real products.
+    I enjoy learning through hands-on projects and exploring engineering problems that connect theoretical concepts with
+    practical applications. I am particularly interested in power engineering, renewable energy, electronics, and research.
+
 focusAreas:
-  - Designing and evolving multi-tenant architectures.
-  - Keeping APIs versioned and stable as features change.
-  - Making search, reporting, and analytics fast enough to feel instant.
-  - Tuning queries and indexes instead of only throwing hardware at the problem.
-  - Using queues, workers, and Redis to keep UIs responsive under load.
+  - Power systems and electrical engineering.
+  - Renewable energy and advanced solar cell technologies.
+  - Circuit design, simulation, and electronics.
+  - MATLAB and Simulink based engineering analysis.
+  - Embedded systems, ESP32, and IoT applications.
+  - Engineering research and practical project development.

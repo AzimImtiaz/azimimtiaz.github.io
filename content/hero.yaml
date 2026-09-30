@@ -1,16 +1,18 @@
-name: Ravi K Gupta
-title: Backend Systems Engineer · Multi-Tenant SaaS Architecture
-tagline: Laravel & Go backend engineer focused on SaaS products that have to stay fast and predictable.
-location: Noida, Uttar Pradesh, India
+name: Abdul Azim Imtiaz
+title: Electrical & Electronic Engineering Student
+
+location: Chattogram, Bangladesh
 openToWork: true
+
 highlights:
-  - Working on web backends since 2014
-  - Most of my time goes into multi-tenant SaaS and internal product tooling
-  - Care a lot about stability, data design, and clear APIs
+  - B.Sc(Engr.) in Electrical & Electronic Engineering at CUET
+  - Interested in power systems, power electronics, renewable energy and solar cell.
+  - Working with MATLAB, Simulink, AutoCAD, ADS, Proteus,Lumerical and ESP32
+
 actions:
   - label: Email
-    href: mailto:dev.ravikgupt@gmail.com
+    href: mailto:abdulaziim84@gmail.com
   - label: LinkedIn
-    href: https://www.linkedin.com/in/ravi-k-dev
+    href: https://www.linkedin.com/in/azimimtiaz/
   - label: GitHub
-    href: https://github.com/devravik
+    href: https://github.com/AzimImtiaz

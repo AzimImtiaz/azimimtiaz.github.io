@@ -1,9 +1,17 @@
 heading: Education
+
 items:
-  - institution: Uttar Pradesh Technical University
-    degree: Bachelor of Technology (B.Tech.)
-    period: 2008 - 2012
-  - institution: Board of High School and Intermediate Education Uttar Pradesh, India
-    degree: Intermediate (Class XII)
-    details: 'Subjects: Physics, Chemistry, Mathematics, English'
-    period: '2008'
+  - institution: Chittagong University of Engineering & Technology (CUET)
+    degree: B.Sc(Engr.) in Electrical & Electronic Engineering
+    period: 2023 - Present
+    details: Undergraduate Final Year Student in EEE at CUET
+
+  - institution: Ispahani Public School & College
+    degree: Higher Secondary Certificate (HSC)
+    period: 2020 – 2022
+    details: 'Group: Science | GPA: 5.00'
+  
+  - institution: Nasirabad Govt. High School
+    degree: Secondary School Certificate (SSC)
+    period: 2020
+    details: 'Group: Science | GPA: 5.00'
