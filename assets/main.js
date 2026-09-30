@@ -74,7 +74,7 @@ const ICONS = {
     '<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>',
   linkedin:
     '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>',
-  matlab: '<path d="M3 19L8 5l4 10 3-7 6 11h-4l-3-6-2 6h-4L6 10l-1 9z"/>',
+  
   chart: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>',
   box: '<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>',
 };
@@ -508,8 +508,18 @@ const contactSection = () => {
     (contact.message ?? "Have a project, a research idea, or an opening on your team? Send a note and I’ll reply as soon as I can.");
 
   const linkRows = each(contact.links, (link) => {
-    const logo = brandLogo(link.label, link.href);
-    const media = logo ? `<img src="${logo}" alt="">` : icon("external");
+    const lbl = (link.label || "").toLowerCase();
+    const href = (link.href || "").toLowerCase();
+    let media = "";
+
+    if (lbl.includes("github") || href.includes("github")) {
+      media = icon("github");
+    } else if (lbl.includes("linkedin") || href.includes("linkedin")) {
+      media = icon("linkedin");
+    } else {
+      media = icon("external");
+    }
+
     return contactRow(
       media,
       link.label,
