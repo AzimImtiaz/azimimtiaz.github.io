@@ -230,7 +230,7 @@ const contactRow = (media, label, value) => `
 const printHeader = () => {
   const { hero, contact } = state.site;
   const phone = contact.phone
-    ? ` &bull; <span><strong>Mobile:</strong> <a href="tel:${contact.phone.replace(/[^\d+]/g, "")}">${contact.phone}</a></span>`
+    ? ` &bull; <span><strong>Mobile:</strong> <a href="tel:${String(contact.phone).replace(/[^\d+]/g, "")}">${contact.phone}</a></span>`
     : "";
   const links = each(
     contact.links,
@@ -511,7 +511,7 @@ const contactSection = () => {
                 ? contactRow(
                     icon("phone"),
                     "Mobile",
-                    `<a class="link" href="tel:${contact.phone.replace(/[^\d+]/g, "")}">${contact.phone}</a>`
+                    `<a class="link" href="tel:${String(contact.phone).replace(/[^\d+]/g, "")}">${contact.phone}</a>`
                   )
                 : ""
             }
