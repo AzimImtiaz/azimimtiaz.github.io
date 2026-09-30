@@ -70,6 +70,11 @@ const ICONS = {
   cpu: '<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/>',
   zap: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
   activity: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
+  github:
+    '<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>',
+  linkedin:
+    '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>',
+
   chart: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>',
   box: '<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>',
 };
@@ -199,8 +204,18 @@ const chip = (label) => {
 };
 
 const linkWithLogo = (link) => {
-  const logo = brandLogo(link.label, link.href);
-  const media = logo ? `<img class="link__logo" src="${logo}" alt="">` : icon("external", "link__glyph");
+  const lbl = (link.label || "").toLowerCase();
+  const href = (link.href || "").toLowerCase();
+  let media = "";
+
+  if (lbl.includes("github") || href.includes("github")) {
+    media = icon("github", "link__glyph");
+  } else if (lbl.includes("linkedin") || href.includes("linkedin")) {
+    media = icon("linkedin", "link__glyph");
+  } else {
+    media = icon("external", "link__glyph");
+  }
+
   const printText = link.href.includes("play.google.com/store/apps/details")
     ? link.label || "Play Store"
     : stripUrl(link.href);
@@ -285,12 +300,20 @@ const roleSwitch = () => {
 };
 
 const heroAction = (action) => {
-  const logo = brandLogo(action.label, action.href);
-  const media = logo
-    ? `<img class="btn__logo" src="${logo}" alt="">`
-    : action.href.startsWith("mailto:")
-      ? icon("mail", "btn__glyph")
-      : "";
+  const lbl = (action.label || "").toLowerCase();
+  const href = (action.href || "").toLowerCase();
+  let media = "";
+
+  if (lbl.includes("github") || href.includes("github")) {
+    media = icon("github", "btn__glyph");
+  } else if (lbl.includes("linkedin") || href.includes("linkedin")) {
+    media = icon("linkedin", "btn__glyph");
+  } else if (href.startsWith("mailto:")) {
+    media = icon("mail", "btn__glyph");
+  } else {
+    media = icon("external", "btn__glyph");
+  }
+
   return `<a href="${action.href}"${linkAttrs(action.href)} class="btn btn--ghost">${media}<span>${action.label}</span></a>`;
 };
 
