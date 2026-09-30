@@ -309,7 +309,7 @@ const heroSection = () => {
       <div class="wrap hero__grid">
         <div class="hero__main">
           ${roleSwitch()}
-          <p class="hero__kicker">${profile.name}</p>
+          <p class="hero__kicker">Electrical & Electronic Engineering Student</p>
           <h1 class="hero__title">${hero.name}</h1>
           <p class="hero__meta">
             <span>${hero.location}</span>
