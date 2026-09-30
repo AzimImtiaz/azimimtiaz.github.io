@@ -7,7 +7,7 @@ import * as yaml from "./vendor/js-yaml.mjs";
    Config
    ------------------------------------------------------------------------- */
 
-const CONTENT_FILES = ["hero", "skills", "projects", "experience", "education", "contact", "profiles"];
+const CONTENT_FILES = ["hero", "about", "skills", "projects", "experience", "education", "contact", "profiles"];
 const LOGO_DIR = "./assets/logos/";
 const AVATAR_SRC = "./azim-avatar.png";
 const DEFAULT_FOCUS = ["MATLAB", "Simulink", "Power Systems", "Renewable Energy", "Embedded Systems", "Circuit Design"];
