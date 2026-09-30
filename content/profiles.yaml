@@ -7,29 +7,16 @@ backend:
 
   summaryHeading: PROFILE SUMMARY
 
-  summaryParagraphs:
-    - >-
-      Electrical & Electronic Engineering student at Chittagong University of Engineering & Technology (CUET),
-      with interests in power systems, electronics, renewable energy, and engineering research.
+summaryParagraphs:
+  - >-
+    Final-Year Electrical & Electronic Engineering student at Chittagong University of Engineering & Technology (CUET), interested in power systems, power electronics, renewable energy, and solar cell technology. I enjoy working on practical engineering problems through simulation, design, and hands-on projects.
 
-    - >-
-      Experienced with engineering simulation and design tools including MATLAB, Simulink, AutoCAD Electrical,
-      ADS, and Proteus, along with hands-on work with ESP32-based embedded and IoT systems.
+  - >-
+    I’ve worked with MATLAB, Simulink, ADS, AutoCAD Electrical, Proteus, and ESP32-based embedded and IoT systems. Alongside my academic projects, I’m developing my interest in photovoltaic technology and engineering research, with a focus on learning, experimenting, and building practical solutions.
 
-    - >-
-      Interested in applying engineering theory to practical projects while developing skills in electrical
-      systems, renewable energy, embedded systems, and technical research.
-
-  focusAreas:
-    - Power systems and electrical engineering.
-    - Renewable energy and photovoltaic technologies.
-    - Circuit design and electronics.
-    - MATLAB and Simulink based engineering simulation.
-    - Embedded systems and IoT applications.
-    - Engineering research and project development.
-
-  featuredProjects:
-    - 64 kVA Distribution Transformer Design
-    - Multi-Level Water Level Indicator with Pump Control
-    - ESP32-Based ECG Monitoring System
-    - All-Perovskite Tandem Solar Cell Research
+focusAreas:
+  - Power Systems & Power Electronics
+  - Renewable Energy & Solar Cells
+  - MATLAB & Simulink Based Engineering Analysis
+  - Embedded & IoT Systems
+  - Engineering Research & Projects
