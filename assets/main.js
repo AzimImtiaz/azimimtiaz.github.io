@@ -1,11 +1,6 @@
-// Portfolio renderer.
-// All content lives in /content/*.yaml and is parsed in the browser with the
-// vendored js-yaml, so there is no build step. Edit the YAML, not this file.
+
 import * as yaml from "./vendor/js-yaml.mjs";
 
-/* -------------------------------------------------------------------------
-   Config
-   ------------------------------------------------------------------------- */
 
 const CONTENT_FILES = ["hero", "skills", "projects", "experience", "education", "contact", "profiles"];
 const LOGO_DIR = "./assets/logos/";
@@ -35,9 +30,6 @@ const state = { site: null, profiles: null, slug: "", profile: null, showSelecto
 const root = document.getElementById("root");
 const params = new URLSearchParams(window.location.search);
 
-/* -------------------------------------------------------------------------
-   Small helpers
-   ------------------------------------------------------------------------- */
 
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
@@ -50,9 +42,6 @@ const escapeRegExp = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const escapeHtml = (text) =>
   String(text).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 
-/* -------------------------------------------------------------------------
-   Icons and brand logos
-   ------------------------------------------------------------------------- */
 
 const ICONS = {
   mail: '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>',
@@ -82,7 +71,7 @@ const ICONS = {
 const icon = (name, className = "") =>
   `<svg class="${className}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
 
-// [keyword, logo file]. Keywords match at the start of a word, case-insensitive.
+
 const LOGOS = [
   ["laravel", "laravel-com-logo.png"],
   ["php", "php-net-logo.png"],
@@ -161,8 +150,6 @@ const GLYPHS = [
   ["hardware", "box"],
 ];
 
-// Earliest word-start match wins; on a tie the longer keyword wins
-// (so "google play" beats "go" and "react native" beats "react").
 const bestMatch = (text, table) => {
   const haystack = text.toLowerCase();
   let best = null;
@@ -182,16 +169,12 @@ const logoFor = (text = "") => {
   return file ? `${LOGO_DIR}${file}` : null;
 };
 
-// Generic link labels ("Live site", "Demo") should not pick up a brand logo.
+
 const brandLogo = (label = "", href = "") => {
   if (/live site|website|demo|app/i.test(label)) return null;
   if (href.includes("github.io") && !/github/i.test(label)) return null;
   return logoFor(`${label} ${href}`);
 };
-
-/* -------------------------------------------------------------------------
-   Reusable fragments
-   ------------------------------------------------------------------------- */
 
 const chip = (label) => {
   const logo = logoFor(label);
@@ -239,9 +222,6 @@ const contactRow = (media, label, value) => `
     <div class="contact-list__text"><span class="label">${label}</span>${value}</div>
   </li>`;
 
-/* -------------------------------------------------------------------------
-   Section templates
-   ------------------------------------------------------------------------- */
 
 const printHeader = () => {
   const { hero, contact } = state.site;
