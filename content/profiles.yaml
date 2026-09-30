@@ -2,21 +2,21 @@ backend:
   slug: backend
   name: Electrical & Electronic Engineering Student
   heroTitle: Electrical & Electronic Engineering Student · CUET
-  
+
   printTitle: Electrical & Electronic Engineering Student • Power, Electronics & Renewable Energy
 
   summaryHeading: PROFILE SUMMARY
 
-summaryParagraphs:
-  - >-
-    Final-Year Electrical & Electronic Engineering student at Chittagong University of Engineering & Technology (CUET), interested in power systems, power electronics, renewable energy, and solar cell technology. I enjoy working on practical engineering problems through simulation, design, and hands-on projects.
+  summaryParagraphs:
+    - >-
+      Final-Year Electrical & Electronic Engineering student at Chittagong University of Engineering & Technology (CUET), interested in power systems, power electronics, renewable energy, and solar cell technology. I enjoy working on practical engineering problems through simulation, design, and hands-on projects.
 
-  - >-
-    I’ve worked with MATLAB, Simulink, ADS, AutoCAD Electrical, Proteus, and ESP32-based embedded and IoT systems. Alongside my academic projects, I’m developing my interest in photovoltaic technology and engineering research, with a focus on learning, experimenting, and building practical solutions.
+    - >-
+      I’ve worked with MATLAB, Simulink, ADS, AutoCAD Electrical, Proteus, and ESP32-based embedded and IoT systems. Alongside my academic projects, I’m developing my interest in photovoltaic technology and engineering research, with a focus on learning, experimenting, and building practical solutions.
 
-focusAreas:
-  - Power Systems & Power Electronics
-  - Renewable Energy & Solar Cells
-  - MATLAB & Simulink Based Engineering Analysis
-  - Embedded & IoT Systems
-  - Engineering Research & Projects
+  focusAreas:
+    - Power Systems & Power Electronics
+    - Renewable Energy & Solar Cells
+    - MATLAB & Simulink Based Engineering Analysis
+    - Embedded & IoT Systems
+    - Engineering Research & Projects
