@@ -145,6 +145,7 @@ const LOGOS = [
 ];
 
 const GLYPHS = [
+  ["matlab", "chart"],
   ["embedded", "cpu"],
   ["microcontroller", "cpu"],
   ["circuit", "cpu"],
@@ -153,7 +154,6 @@ const GLYPHS = [
   ["energy", "zap"],
   ["signal", "activity"],
   ["simulink", "activity"],
-  ["matlab", "matlab"],
   ["control", "layers"],
   ["system", "layers"],
   ["analysis", "chart"],
