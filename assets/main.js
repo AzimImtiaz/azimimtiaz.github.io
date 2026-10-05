@@ -484,8 +484,8 @@ const skillsSection = () => `
 const contactSection = () => {
   const { contact } = state.site;
   const intro =
-    (contact.openToWork ? "I’m currently open to new opportunities. " : "") +
-    (contact.message ?? "Have a project, a research idea, or an opening on your team? Send a note and I’ll reply as soon as I can.");
+    (contact.openToWork ? "Always open to new opportunities. " : "") +
+    (contact.message ?? "Have a project, a research idea or an opening on your team? Send a note and I’ll reply as soon as I can.");
 
   const linkRows = each(contact.links, (link) => {
     const lbl = (link.label || "").toLowerCase();
